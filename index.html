@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>AI Refinery Dashboard</title>
+
+    <link rel="stylesheet"
+    href="css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>REFINERY AI</h2>
+
+        <ul>
+
+            <li><i class="fa-solid fa-chart-line"></i> Dashboard</li>
+
+            <li><i class="fa-solid fa-gears"></i> Pumps</li>
+
+            <li><i class="fa-solid fa-microchip"></i> Motors</li>
+
+            <li><i class="fa-solid fa-triangle-exclamation"></i> Alerts</li>
+
+            <li><i class="fa-solid fa-file"></i> Reports</li>
+
+        </ul>
+
+    </div>
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <!-- Topbar -->
+
+        <div class="topbar">
+
+            <h1>AI Predictive Maintenance System</h1>
+
+        </div>
+
+        <!-- Overview Cards -->
+
+        <div class="cards">
+
+            <div class="card green">
+
+                <h3>Healthy Machines</h3>
+
+                <p>24</p>
+
+            </div>
+
+            <div class="card yellow">
+
+                <h3>Warning Machines</h3>
+
+                <p>5</p>
+
+            </div>
+
+            <div class="card red">
+
+                <h3>Critical Machines</h3>
+
+                <p>2</p>
+
+            </div>
+
+        </div>
+
+        <!-- Pump Prediction -->
+
+        <div class="prediction-box">
+
+            <h2>Pump Failure Prediction</h2>
+
+            <div class="input-group">
+
+                <input type="number"
+                id="pumpTemp"
+                placeholder="Temperature">
+
+                <input type="number"
+                id="pumpRPM"
+                placeholder="RPM">
+
+                <input type="number"
+                id="pumpVibration"
+                placeholder="Vibration">
+
+            </div>
+
+            <button onclick="predictPump()">
+                Predict Pump
+            </button>
+
+            <div class="result-card">
+
+                <h3>AI Prediction</h3>
+
+                <p id="pumpPrediction">
+                    Waiting for input...
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Motor Prediction -->
+
+        <div class="prediction-box">
+
+            <h2>Motor Failure Prediction</h2>
+
+            <div class="input-group">
+
+                <input type="number"
+                id="motorAir"
+                placeholder="Air Temperature">
+
+                <input type="number"
+                id="motorProcess"
+                placeholder="Process Temperature">
+
+                <input type="number"
+                id="motorRPM"
+                placeholder="RPM">
+
+                <input type="number"
+                id="motorTorque"
+                placeholder="Torque">
+
+            </div>
+
+            <button onclick="predictMotor()">
+                Predict Motor
+            </button>
+
+            <div class="result-card">
+
+                <h3>AI Prediction</h3>
+
+                <p id="motorPrediction">
+                    Waiting for input...
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Upload Section -->
+
+        <div class="upload-box">
+
+            <h2>Upload Dataset</h2>
+
+            <input type="file"
+            id="dataset"
+            accept=".csv">
+
+            <button onclick="uploadDataset()">
+                Upload CSV
+            </button>
+
+            <p id="uploadStatus">
+                No file uploaded
+            </p>
+
+        </div>
+
+        <!-- Chart -->
+
+        <div class="chart-box">
+
+            <canvas id="myChart"></canvas>
+
+        </div>
+
+    </div>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
